@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header{
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    div.logo{
+        img{
+            width: 40%;
+        }
+    }
+    div.menu{
+        width: 40%;
+ 
+        nav{
+            ul{
+                list-style: none;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                li{
+                    a{ 
+                        text-decoration: none;
+                        color: black;
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                       
+                    }
+                }
+            }
+        } 
+    
+    }
+}
+
