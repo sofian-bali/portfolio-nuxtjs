@@ -4,13 +4,18 @@ import { resolve } from 'path'
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxt/content',
+    '@pinia/nuxt',
+    '@samk-dev/nuxt-vcalendar',
+    "@nuxt/ui",
+
   ],
   alias: {
-    assets: "/<rootDir>/assets/images"
+    assets: '/<rootDir>/assets/images',
   },
   css: [
-    '~/assets/main.scss'
+    '~/assets/main.scss',
+    '~/assets/main.css',
   ],
   postcss: {
     plugins: {
@@ -19,4 +24,3 @@ export default defineNuxtConfig({
     },
   },
 })
- 

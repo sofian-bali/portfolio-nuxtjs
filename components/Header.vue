@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <header>
           <div class="logo">
             <NuxtLink to="/">
@@ -19,7 +18,9 @@
               <li>
                 <NuxtLink to="/about">A Propos</NuxtLink>
               </li>
-              
+              <li>
+                <NuxtLink to="/foot">Football</NuxtLink>
+              </li>
             </ul>
             </nav>  
           </div>

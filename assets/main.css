@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  background-color: #fff;
+  color: #000;
+}
+html body {
+  margin: 0 30px;
+}
+html body header {
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+html body header div.logo img {
+  width: 40%;
+}
+html body header div.menu {
+  width: 40%;
+}
+html body header div.menu nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+html body header div.menu nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 500;
+}/*# sourceMappingURL=main.css.map */
