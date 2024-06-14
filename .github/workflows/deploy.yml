@@ -29,19 +29,26 @@ jobs:
 
     - name: Install Homebrew
       run: |
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>~/.profile
-        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        sudo apt-get update
+        sudo apt-get install -y build-essential curl file git
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+        echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >>~/.profile
+        eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
         brew update
 
     - name: Sleep for 10 seconds
       run: sleep 10
 
     - name: Install LFTP
-      run: brew install lftp
+      run: |
+        echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >>~/.profile
+        eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+        brew install lftp
 
     - name: Deploy to server
       run: |
+        echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >>~/.profile
+        eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
         lftp -d -e "mirror -R ./dist .; bye" -u "$FTP_USER,$FTP_PASS" "node56-eu.n0c.com"
       env:
         FTP_USER: ${{ secrets.FTP_USER }}
