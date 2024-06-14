@@ -44,6 +44,14 @@ jobs:
         echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >>~/.profile
         eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
         brew install lftp
+    
+    - name: Log environment variables
+      run: |
+        echo "FTP_USER: $FTP_USER"
+        echo "FTP_PASS: $FTP_PASS"
+      env:
+        FTP_USER: ${{ secrets.FTP_USER }}
+        FTP_PASS: ${{ secrets.FTP_PASS }}
 
     - name: Deploy to server
       run: |
