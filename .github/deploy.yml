@@ -1,0 +1,48 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16' # Vous pouvez spécifier la version de Node.js que vous utilisez
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build the project
+      run: npm run build
+
+    - name: Generate the static files
+      run: npm run generate
+
+    - name: Install Homebrew
+      run: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>~/.profile
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        brew update
+
+    - name: Sleep for 10 seconds
+      run: sleep 10
+
+    - name: Install LFTP
+      run: brew install lftp
+
+    - name: Deploy to server
+      run: |
+        lftp -d -e "mirror -R ./dist .; bye" -u "$FTP_USER,$FTP_PASS" "node56-eu.n0c.com"
+      env:
+        FTP_USER: ${{ secrets.FTP_USER }}
+        FTP_PASS: ${{ secrets.FTP_PASS }}

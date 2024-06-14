@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 html {
-  background-color: #fff;
-  color: #000;
+  color: #fff;
 }
 html body {
   margin: 0 30px;
@@ -29,7 +28,18 @@ html body header div.menu nav ul {
 }
 html body header div.menu nav ul li a {
   text-decoration: none;
-  color: black;
   font-size: 1.5rem;
   font-weight: 500;
+}
+html body .tech-item svg {
+  width: 40%;
+  height: auto;
+  aspect-ratio: 3/2;
+  -o-object-fit: contain;
+     object-fit: contain;
+  fill: currentColor;
+  transition: all 0.3s ease;
+}
+html body .tech-item svg:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=main.css.map */

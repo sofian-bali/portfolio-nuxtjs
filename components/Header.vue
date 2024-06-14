@@ -24,6 +24,7 @@
             </ul>
             </nav>  
           </div>
+          <mode/>
         </header>
     </div>
   </template>

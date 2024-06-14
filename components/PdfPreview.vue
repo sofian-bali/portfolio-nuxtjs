@@ -16,7 +16,7 @@
   }
   
   const canvas = ref(null);
-  const pdfUrl = '/cv.pdf'; // Remplacez par l'URL de votre PDF
+  const pdfUrl = '/CV_Sofian_Bali.pdf'; // Remplacez par l'URL de votre PDF
   
   onMounted(async () => {
     try {

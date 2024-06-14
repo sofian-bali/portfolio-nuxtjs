@@ -1,9 +1,4 @@
-<script setup >
-  
-  const {$sayHello} = useNuxtApp()
-  $sayHello('Sofian')
 
-</script>
 <template>
   <div>
     <h1>Projets Page</h1>
@@ -11,3 +6,10 @@
   </div>
 </template>
 
+<script setup lang="ts">
+definePageMeta({
+  pageTransition: {
+    name: 'rotate'
+  }
+})
+</script>

@@ -4,3 +4,11 @@
         <p>Welcome to the about page</p>
     </div>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+  pageTransition: {
+    name: 'rotate'
+  }
+})
+</script>

@@ -30,6 +30,11 @@ function getClubLogo(teamId) {
 const formatDate = (dateTime) => {
     return format(new Date(dateTime), 'dd/MM/yyyy HH:mm');
 }
+definePageMeta({
+  pageTransition: {
+    name: 'rotate'
+  }
+})
 </script>
 
 <template>
@@ -67,7 +72,7 @@ const formatDate = (dateTime) => {
     
 
     .title {
-        color: #000;
+        color: #fff;
         text-align: center;
         font-size: 2em;
         margin-bottom: 20px;

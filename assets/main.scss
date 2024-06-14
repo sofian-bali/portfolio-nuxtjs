@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 html{
-    background-color: #fff;
-    color: #000;
+    
+  color: #fff;
+
 body{
     margin: 0 30px;
     header{
@@ -30,15 +31,26 @@ body{
                     li{
                         a{ 
                             text-decoration: none;
-                            color: black;
                             font-size: 1.5rem;
                             font-weight: 500;
-                           
                         }
                     }
                 }
             } 
         
+        }
+    }
+    .tech-item{
+        svg{
+            width: 40%;
+            height: auto;
+            aspect-ratio: 3/2;
+            object-fit: contain;
+            fill: currentColor;
+            transition: all 0.3s ease;
+            &:hover{
+                transform: scale(1.1);
+            }
         }
     }
 }
