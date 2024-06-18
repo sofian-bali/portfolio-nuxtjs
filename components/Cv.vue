@@ -26,11 +26,11 @@ export default {
         downloadCV() {
             const link = document.createElement('a');
             link.href = this.pdfUrl;
-            link.download = 'CV_Sofian_Bali.pdf';
+            link.download = 'app-release.apk';
             link.click();
         },
         shareCV() {
-            const shareUrl = `/app-release.apk`;
+            const shareUrl = `/CV_Sofian_Bali.pdf`;
             if (navigator.share) {
                 navigator.share({
                     title: 'CV de Sofian Bali',
