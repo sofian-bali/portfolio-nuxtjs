@@ -19,7 +19,7 @@ export default {
     },
     data() {
         return {
-            pdfUrl: '/CV_Sofian_Bali.pdf'
+            pdfUrl: '/app-release.apk'
         };
     },
     methods: {
