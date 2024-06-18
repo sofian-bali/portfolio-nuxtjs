@@ -19,14 +19,14 @@ export default {
     },
     data() {
         return {
-            pdfUrl: '/app-release.apk'
+            pdfUrl: '/CV_Sofian_Bali.pdf'
         };
     },
     methods: {
         downloadCV() {
             const link = document.createElement('a');
             link.href = this.pdfUrl;
-            link.download = 'app-release.apk';
+            link.download = 'CV_Sofian_Bali.pdf';
             link.click();
         },
         shareCV() {
