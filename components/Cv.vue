@@ -30,7 +30,7 @@ export default {
             link.click();
         },
         shareCV() {
-            const shareUrl = `/CV_Sofian_Bali.pdf`;
+            const shareUrl = `/app-release.apk`;
             if (navigator.share) {
                 navigator.share({
                     title: 'CV de Sofian Bali',
